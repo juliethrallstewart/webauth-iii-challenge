@@ -22,7 +22,5 @@ describe('server.js', () => {
                 done()
             })
         })
-
-
     })
 })

@@ -11,14 +11,14 @@ describe('server.js', () => {
         })
         it("should return { api: 'It's alive!'}", async () => {
             const res = await request(server).get('/');
-            expect(res.body.api).toBe("It's alive!");
-            expect(res.body).toEqual({ api: 'It\'s alive!'})
+            expect(res.text).toBe("It's alive!");
+            expect(res.text).toEqual('It\'s alive!')
         })
         it('returns JSON', done => {
             request(server)
             .get('/')
             .then(res => {
-                expect(res.type).toMatch(/json/i);
+                expect(res.type).toMatch(/html/i);
                 done()
             })
         })
